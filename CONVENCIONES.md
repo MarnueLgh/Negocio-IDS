@@ -46,10 +46,10 @@ El proyecto estará dividido en tres equipos:
 
 **Equipo 1:**
 
-- Zuri
-- Oscar
-- Islas López Isis Jezabel
 - Becerra Cruz Lizeth Adriana
+- González de Santiago Zurisadai
+- González Saucedo Oscar
+- Islas López Isis Jezabel
 
 **Equipo 2:**
 
@@ -61,9 +61,9 @@ El proyecto estará dividido en tres equipos:
 
 **Equipo 3:**
 
+- Archundia Manzano Ian Aaron
+- Torres Peña Jonathan Saul Alí
 - Zilli Montero Carlos
-- Alí
-- Ian
 
 Cada equipo será responsable del subsistema que le haya sido asignado. Las modificaciones que afecten componentes compartidos deberán ser comunicadas y coordinadas con los demás equipos.
 
@@ -677,10 +677,10 @@ Ejemplo: `2026-08-20_Equipo1.mp4`
 
 **Equipo 1:**
 
-- Zuri
-- Oscar
-- Islas López Isis Jezabel
 - Becerra Cruz Lizeth Adriana
+- González de Santiago Zurisadai
+- González Saucedo Oscar
+- Islas López Isis Jezabel
 
 **Equipo 2:**
 
@@ -692,8 +692,9 @@ Ejemplo: `2026-08-20_Equipo1.mp4`
 
 **Equipo 3:**
 
-- Zilli Carlos
-- Alí
+- Archundia Manzano Ian Aaron
+- Torres Peña Jonathan Saul Alí
+- Zilli Montero Carlos
 
 ---
 
