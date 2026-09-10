@@ -388,6 +388,27 @@ El proyecto utilizará Git para el control de versiones.
 
 **16.6.** Antes de integrar una rama se deberá verificar que el proyecto compile y que las pruebas correspondientes sean exitosas.
 
+## Convenciones de commits
+
+| Convención | Uso | Ejemplo |
+|---|---|---|
+| `feat` | Agregar una nueva funcionalidad | `feat: agregar registro de usuarios` |
+| `fix` | Corregir un error | `fix: corregir validación del correo` |
+| `style` | Cambios de formato, diseño o estilos | `style: ajustar estilos de la tabla` |
+| `refactor` | Reorganizar o mejorar el código sin cambiar su funcionamiento | `refactor: reorganizar clase Usuario` |
+| `docs` | Modificar documentación | `docs: actualizar README` |
+| `test` | Agregar o modificar pruebas | `test: agregar pruebas para Login` |
+| `chore` | Tareas de mantenimiento o configuración | `chore: actualizar dependencias` |
+| `perf` | Mejorar el rendimiento | `perf: optimizar consulta de usuarios` |
+| `build` | Cambios en compilación o dependencias | `build: actualizar configuración de Maven` |
+| `ci` | Cambios relacionados con integración continua | `ci: agregar workflow de GitHub Actions` |
+| `revert` | Revertir un commit anterior | `revert: revertir cambio en Login` |
+
+### Formato
+
+```text
+tipo: descripción breve del cambio
+
 ---
 
 ## 17. Integración entre equipos
@@ -681,6 +702,7 @@ Ejemplo: `2026-08-20_Equipo1.mp4`
 - González de Santiago Zurisadai
 - González Saucedo Oscar
 - Islas López Isis Jezabel
+- Vera Chávez Cristopher Israel
 
 **Equipo 2:**
 
