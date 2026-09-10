@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# Ejecutables / binarios
+*.exe
+*.dll
+*.msi
+
+# Java
+*.class
+*.jar
+target/
+bin/
+out/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+.settings/
+.classpath
+.project
