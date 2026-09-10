@@ -50,6 +50,7 @@ El proyecto estará dividido en tres equipos:
 - González de Santiago Zurisadai
 - González Saucedo Oscar
 - Islas López Isis Jezabel
+- Vera Chávez Israel
 
 **Equipo 2:**
 
