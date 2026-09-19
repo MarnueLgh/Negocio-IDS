@@ -662,7 +662,7 @@ Cada modificación deberá registrar como mínimo:
 | Columna | Lower Camel Case. |
 | Llave primaria lógica en Java | `nombreTablaId` |
 | Constraint de llave primaria | `pkTabla` |
-| Constraint de llave foránea | `fkTablaReceptora_TablaOrigen` |
+| Constraint de llave foránea | `fkTablaReceptoraTablaOrigen` |
 | Constraint UNIQUE | `ukTablaColumna` |
 | Constraint CHECK | `ckTablaRegla` |
 | Índice | `idxTablaColumna` |
