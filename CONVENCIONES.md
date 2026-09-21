@@ -193,7 +193,7 @@ No se concentrará toda la lógica de un subsistema en una sola clase.
 
 ### 7.1. Tablas
 
-Las tablas deberán nombrarse en español, utilizando minúsculas y Upper Camel Case.
+Las tablas deberán nombrarse en español utilizando Upper Camel Case.
 
 No se utilizarán nombres ambiguos o genéricos para las tablas.
 
@@ -213,7 +213,7 @@ Las constraints de llave primaria deberán utilizar la convención `pkTabla`.
 
 ### 7.5. Constraint de llave foránea
 
-Las constraints de llave foránea deberán utilizar la convención `fkTablaReceptora_TablaOrigen`.
+Las constraints de llave foránea deberán utilizar la convención `fkTablaReceptoraTablaOrigen`.
 
 ### 7.6. Índices
 
