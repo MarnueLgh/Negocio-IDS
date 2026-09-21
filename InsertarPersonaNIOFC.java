@@ -1,27 +1,34 @@
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.io.*;
+import java.nio.*;
 
-public class GestionPersonas {
 
     private static final int LONGITUD_NOMBRE = 30;
     private static final int LONGITUD_TELEFONO = 10;
     private static final int TAMANO_REGISTRO = LONGITUD_NOMBRE + LONGITUD_TELEFONO;
-    private static final int CAPACIDAD_TABLA = 101;
+    private static final int CAPACIDAD_TABLA = 100;
+
+
+    private static void inicializarArchivo() throws IOException {
+        if (!ARCHIVO_PATH.toFile().exists()) {
+            try (FileChannel channel = FileChannel.open(ARCHIVO_PATH, 
+                    StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
+                ByteBuffer buffer = ByteBuffer.allocate(TAMANO_REGISTRO * MAX_REGISTROS);
+                channel.write(buffer); // Genera un archivo limpio de exactamente 4,000 bytes
+            }
+        }
+    }
+
+    private static int funcionHash(String nombre){
+            int hash = nombre.trim().toLowerCase().hashCode();
+            return Math.abs(hash) % CAPACIDAD_TABLA;
+        }
+
 
     public static boolean insertar(String rutaArchivo, String nombre, String telefono) {
         Path path = Paths.get(rutaArchivo);
         
         String nombreFijo = String.format("%-30s", nombre.length() > LONGITUD_NOMBRE ? nombre.substring(0, LONGITUD_NOMBRE) : nombre);
         String telefonoFijo = String.format("%-10s", telefono.length() > LONGITUD_TELEFONO ? telefono.substring(0, LONGITUD_TELEFONO) : telefono);
-        
-        int hash = nombre.trim().toLowerCase().hashCode();
-        int indiceHash = Math.abs(hash) % CAPACIDAD_TABLA;
-        long posicionByte = (long) indiceHash * TAMANO_REGISTRO;
         
         ByteBuffer buffer = ByteBuffer.allocate(TAMANO_REGISTRO);
         buffer.put(nombreFijo.getBytes(StandardCharsets.UTF_8));
@@ -46,4 +53,3 @@ public class GestionPersonas {
             return false;
         }
     }
-}
