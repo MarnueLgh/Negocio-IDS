@@ -1,48 +1,49 @@
-import java.io.*;
-import java.nio.*;
-import java.util.*;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
-public class InsertarPersonaNIOFC {
-    
-    
+public class GestionPersonas {
 
-    public void insertar(String ruta){
+    private static final int LONGITUD_NOMBRE = 30;
+    private static final int LONGITUD_TELEFONO = 10;
+    private static final int TAMANO_REGISTRO = LONGITUD_NOMBRE + LONGITUD_TELEFONO;
+    private static final int CAPACIDAD_TABLA = 101;
 
-        Scanner teclado = new Scanner(System.in); 
-                
-        System.out.println("Ingresa el nombre que quieres agregar");
-        String nombreEntrada = teclado.nextLine();
+    public static boolean insertar(String rutaArchivo, String nombre, String telefono) {
+        Path path = Paths.get(rutaArchivo);
         
-        System.out.println("Ingresa el teléfono que quieres agregar");
-        String telefonoEntrada = teclado.nextLine();
-
-
-        String nombreFormateado = new String.format("%-30s", nombreEntrada);
-        String telefonoFormateado = String.format("%-10s", telefonoEntrada);
-        int registroMaxLenght = (30 + 10) * 2; // pregunta para la siguiente clas3e
-
-        Path pathr = paths.get(ruta);
-
-        try (FileChannel canal = FileChannel.open(path, Standard.Open.Option.CREATE, Standard.Open.Option.WRITE, Standard.Open.Option.APPEND)){
-
-            ByteBuffer buffer = ByteBuffer.allocate(registroMaxLenght);
-
-            for (int i = 0; i < nombreFormateado.length(); i++) {
-                buffer.putChar(nombreFormateado.charAt(i));
-            }
-
-            for (int i = 0; i < telefonoFormateado.length(); i++) {
-                buffer.putChar(telefonoFormateado.charAt(i));
-            }
+        String nombreFijo = String.format("%-30s", nombre.length() > LONGITUD_NOMBRE ? nombre.substring(0, LONGITUD_NOMBRE) : nombre);
+        String telefonoFijo = String.format("%-10s", telefono.length() > LONGITUD_TELEFONO ? telefono.substring(0, LONGITUD_TELEFONO) : telefono);
         
+        int hash = nombre.trim().toLowerCase().hashCode();
+        int indiceHash = Math.abs(hash) % CAPACIDAD_TABLA;
+        long posicionByte = (long) indiceHash * TAMANO_REGISTRO;
+        
+        ByteBuffer buffer = ByteBuffer.allocate(TAMANO_REGISTRO);
+        buffer.put(nombreFijo.getBytes(StandardCharsets.UTF_8));
+        buffer.put(telefonoFijo.getBytes(StandardCharsets.UTF_8));
         buffer.flip();
-        
-        canal.write(buffer);
-        
-        System.out.println("¡Contacto guardado exitosamente en la agenda!");
 
-
+        try (FileChannel fileChannel = FileChannel.open(path,
+        StandardOpenOption.CREATE,
+        StandardOpenOption.READ,
+        StandardOpenOption.WRITE)) {
+            
+            fileChannel.position(posicionByte);
+            
+            while (buffer.hasRemaining()) {
+                fileChannel.write(buffer);
+            }
+        
+            return true;
+        
+        } catch (IOException e) {
+            System.err.println("Error al insertar el registro en el archivo .data: " + e.getMessage());
+            return false;
         }
     }
-
 }
