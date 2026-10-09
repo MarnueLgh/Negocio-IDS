@@ -47,23 +47,20 @@ El proyecto estará dividido en tres equipos:
 **Equipo 1:**
 
 - Becerra Cruz Lizeth Adriana
-- González de Santiago Zurisadai
 - González Saucedo Oscar
 - Islas López Isis Jezabel
-- Vera Chávez Israel
 
 **Equipo 2:**
 
 - Álvarez Aguilar Saúl Antonio
-- González Cruz Daniel
-- Olvera Ramírez Anuar Manuel
 - Pérez Flores Roberto Carlos
 - Pérez Muñoz Diego
 
 **Equipo 3:**
 
-- Archundia Manzano Ian Aaron
-- Torres Peña Jonathan Saul Alí
+- González Cruz Daniel
+- González de Santiago Zurisadai
+- Olvera Ramírez Anuar Manuel
 - Zilli Montero Carlos
 
 Cada equipo será responsable del subsistema que le haya sido asignado. Las modificaciones que afecten componentes compartidos deberán ser comunicadas y coordinadas con los demás equipos.
@@ -700,23 +697,20 @@ Ejemplo: `2026-08-20_Equipo1.mp4`
 **Equipo 1:**
 
 - Becerra Cruz Lizeth Adriana
-- González de Santiago Zurisadai
 - González Saucedo Oscar
 - Islas López Isis Jezabel
-- Vera Chávez Cristopher Israel
 
 **Equipo 2:**
 
 - Álvarez Aguilar Saúl Antonio
-- González Cruz Daniel
-- Olvera Ramírez Anuar Manuel
 - Pérez Flores Roberto Carlos
 - Pérez Muñoz Diego
 
 **Equipo 3:**
 
-- Archundia Manzano Ian Aaron
-- Torres Peña Jonathan Saul Alí
+- González Cruz Daniel
+- González de Santiago Zurisadai
+- Olvera Ramírez Anuar Manuel
 - Zilli Montero Carlos
 
 ---
