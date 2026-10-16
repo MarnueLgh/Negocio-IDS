@@ -404,7 +404,6 @@ El proyecto utilizará Git para el control de versiones.
 
 ### Formato
 
-```text
 tipo: descripción breve del cambio
 
 ---
