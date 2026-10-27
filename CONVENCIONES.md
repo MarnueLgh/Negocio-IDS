@@ -47,23 +47,20 @@ El proyecto estará dividido en tres equipos:
 **Equipo 1:**
 
 - Becerra Cruz Lizeth Adriana
-- González de Santiago Zurisadai
 - González Saucedo Oscar
 - Islas López Isis Jezabel
-- Vera Chávez Israel
 
 **Equipo 2:**
 
 - Álvarez Aguilar Saúl Antonio
-- González Cruz Daniel
-- Olvera Ramírez Anuar Manuel
 - Pérez Flores Roberto Carlos
 - Pérez Muñoz Diego
 
 **Equipo 3:**
 
-- Archundia Manzano Ian Aaron
-- Torres Peña Jonathan Saul Alí
+- González Cruz Daniel
+- González de Santiago Zurisadai
+- Olvera Ramírez Anuar Manuel
 - Zilli Montero Carlos
 
 Cada equipo será responsable del subsistema que le haya sido asignado. Las modificaciones que afecten componentes compartidos deberán ser comunicadas y coordinadas con los demás equipos.
@@ -193,7 +190,7 @@ No se concentrará toda la lógica de un subsistema en una sola clase.
 
 ### 7.1. Tablas
 
-Las tablas deberán nombrarse en español, utilizando minúsculas y Upper Camel Case.
+Las tablas deberán nombrarse en español utilizando Upper Camel Case.
 
 No se utilizarán nombres ambiguos o genéricos para las tablas.
 
@@ -213,7 +210,7 @@ Las constraints de llave primaria deberán utilizar la convención `pkTabla`.
 
 ### 7.5. Constraint de llave foránea
 
-Las constraints de llave foránea deberán utilizar la convención `fkTablaReceptora_TablaOrigen`.
+Las constraints de llave foránea deberán utilizar la convención `fkTablaReceptoraTablaOrigen`.
 
 ### 7.6. Índices
 
@@ -407,7 +404,6 @@ El proyecto utilizará Git para el control de versiones.
 
 ### Formato
 
-```text
 tipo: descripción breve del cambio
 
 ---
@@ -700,23 +696,20 @@ Ejemplo: `2026-08-20_Equipo1.mp4`
 **Equipo 1:**
 
 - Becerra Cruz Lizeth Adriana
-- González de Santiago Zurisadai
 - González Saucedo Oscar
 - Islas López Isis Jezabel
-- Vera Chávez Cristopher Israel
 
 **Equipo 2:**
 
 - Álvarez Aguilar Saúl Antonio
-- González Cruz Daniel
-- Olvera Ramírez Anuar Manuel
 - Pérez Flores Roberto Carlos
 - Pérez Muñoz Diego
 
 **Equipo 3:**
 
-- Archundia Manzano Ian Aaron
-- Torres Peña Jonathan Saul Alí
+- González Cruz Daniel
+- González de Santiago Zurisadai
+- Olvera Ramírez Anuar Manuel
 - Zilli Montero Carlos
 
 ---
