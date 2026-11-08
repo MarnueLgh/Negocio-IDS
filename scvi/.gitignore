@@ -1,6 +1,9 @@
 ### Credenciales locales ###
 .env
 
+### Bitácoras (Log4j 2) ###
+logs/
+
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
