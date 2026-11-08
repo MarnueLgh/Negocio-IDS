@@ -190,13 +190,13 @@ No se concentrará toda la lógica de un subsistema en una sola clase.
 
 ### 7.1. Tablas
 
-Las tablas deberán nombrarse en español utilizando Upper Camel Case.
+Las tablas deberán nombrarse en español utilizando Upper Camel Case, por ejemplo: `NombreEjemplo`.
 
 No se utilizarán nombres ambiguos o genéricos para las tablas.
 
 ### 7.2. Columnas
 
-Las columnas deberán escribirse en minúsculas utilizando Lower Camel Case, dicho nombre no debe ser ambiguo o genérico.
+Las columnas deberán escribirse utilizando Lower Camel Case, por ejemplo: `nombreEjemplo`. Dicho nombre no debe ser ambiguo o genérico.
 
 ### 7.3. Llaves primarias
 
@@ -222,7 +222,7 @@ Los índices deberán utilizar la convención `idxTablaColumna`.
 
 Deberá existir una correspondencia clara y consistente entre las entidades Java y las tablas de MySQL.
 
-Los nombres de clases y atributos en Java utilizarán las convenciones propias de Java, mientras que las tablas y columnas de MySQL utilizarán Lower Camel Case.
+Los nombres de clases y atributos en Java utilizarán las convenciones propias de Java, mientras que en MySQL las tablas utilizarán Upper Camel Case (`NombreEjemplo`) y las columnas Lower Camel Case (`nombreEjemplo`).
 
 La transformación entre Upper Camel Case y Lower Camel Case deberá mantenerse uniforme en todos los subsistemas.
 
@@ -680,8 +680,8 @@ Cada modificación deberá registrar como mínimo:
 | Columna | Lower Camel Case. |
 | Llave primaria lógica en Java | `nombreTablaId` |
 | Constraint de llave primaria | `pkTabla` |
-| Constraint de llave foránea | `fkTablaReceptora_TablaOrigen` |
-| Constraint UNIQUE | `ukTablaColumna` |
+| Constraint de llave foránea | `fkTablaReceptoraTablaOrigen` |
+| Constraint UNIQUE | `uqTablaColumna` |
 | Constraint CHECK | `ckTablaRegla` |
 | Índice | `idxTablaColumna` |
 
