@@ -9,13 +9,15 @@ Sistema desarrollado para gestionar de manera integrada las operaciones de compr
 
 ## 2. Objetivo
 
-Desarrollar un sistema que permita organizar y gestionar las operaciones de compra, venta y control de inventario mediante una aplicación de escritorio y una base de datos centralizada.
+Desarrollar un sistema que permita organizar y gestionar las operaciones de compra, venta y control de inventario mediante una API REST y una base de datos centralizada.
 
 ## 3. Tecnologías utilizadas
 
-* Java.
-* MySQL.
-* Git y GitHub.
+* Java 25 y Spring Boot 4.1 (Web MVC, Data JPA, Validation, Actuator).
+* MySQL 8 (H2 en memoria para pruebas).
+* Log4j 2 para bitácoras.
+* Maven Wrapper para la construcción.
+* Git, GitHub y GitHub Actions (integración continua).
 * Extreme Programming (XP) y Scrum como metodologías de desarrollo.
 
 ## 4. Subsistemas
@@ -30,34 +32,62 @@ Los tres subsistemas deberán mantener la compatibilidad de sus estructuras y op
 
 ## 5. Requisitos previos
 
-* JDK compatible con el proyecto.
-* MySQL instalado y configurado.
-* Entorno de desarrollo compatible con Java.
-* Git para clonar y actualizar el repositorio.
+* JDK 21 o superior.
+* MySQL 8.0 o superior.
+* Git 2.40 o superior.
+* No es necesario instalar Maven: el proyecto incluye el wrapper (`mvnw`).
 
 ## 6. Instalación y configuración
 
 1. Clonar el repositorio.
-2. Abrir el proyecto en el entorno de desarrollo.
-3. Crear y configurar la base de datos MySQL.
-4. Ejecutar los scripts SQL necesarios para preparar la estructura de la base de datos.
-5. Configurar la conexión a la base de datos mediante el mecanismo establecido para el proyecto.
-6. Verificar que las dependencias estén disponibles.
+2. Crear la base de datos y el usuario en MySQL:
+
+   ```sql
+   CREATE DATABASE scvi CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+   CREATE USER 'user_scvi_app'@'localhost' IDENTIFIED BY '<tu_clave>';
+   GRANT ALL PRIVILEGES ON scvi.* TO 'user_scvi_app'@'localhost';
+   FLUSH PRIVILEGES;
+   ```
+
+3. Copiar `scvi/.env.example` como `scvi/.env` y escribir el usuario y la clave. El archivo `.env` no se versiona.
 
 ## 7. Ejecución
 
-1. Abrir el proyecto en el entorno de desarrollo.
-2. Verificar la configuración de la base de datos.
-3. Ejecutar la clase principal correspondiente.
-4. Comprobar el funcionamiento de las operaciones implementadas.
+Todos los comandos se ejecutan desde la carpeta `scvi/`.
 
-Los pasos específicos deberán actualizarse de acuerdo con la estructura definitiva del proyecto.
+| Acción | Windows | Mac/Linux |
+|---|---|---|
+| Ejecutar la aplicación | `.\mvnw.cmd spring-boot:run` | `./mvnw spring-boot:run` |
+| Correr las pruebas | `.\mvnw.cmd test` | `./mvnw test` |
+| Compilar y verificar (igual que el CI) | `.\mvnw.cmd clean verify` | `./mvnw clean verify` |
+| Generar el JAR | `.\mvnw.cmd package` | `./mvnw package` |
+
+Para comprobar la conexión a la base de datos, abrir <http://localhost:8081/actuator/health> y verificar `"db": {"status": "UP"}`.
+
+Las bitácoras se escriben en consola y en `scvi/logs/` (`scvi.log` y `scvi-error.log`).
 
 ## 8. Estructura del proyecto
 
-El código fuente se organiza en componentes correspondientes a los tres subsistemas y sus respectivas responsabilidades.
+```
+scvi/
+├── .env.example                      # Plantilla de credenciales (copiar como .env)
+├── mvnw, mvnw.cmd                    # Maven Wrapper
+├── pom.xml                           # Dependencias y construcción
+└── src/
+    ├── main/
+    │   ├── java/mx/unam/fca/scvi/
+    │   │   └── ScviApplication.java          # Clase de arranque
+    │   └── resources/
+    │       ├── application.properties        # Configuración común (BD, puerto 8081, Actuator)
+    │       └── log4j2-spring.xml             # Configuración de bitácoras
+    └── test/
+        ├── java/mx/unam/fca/scvi/
+        │   └── ScviApplicationTests.java     # Prueba de arranque del contexto
+        └── resources/
+            └── application-test.properties   # Perfil test: H2 en memoria
+```
 
-[Aquí irá la estructura de carpetas]
+Las clases nuevas van en subpaquetes de `mx.unam.fca.scvi` (por ejemplo, `mx.unam.fca.scvi.inventario`); fuera de ese paquete Spring no las detecta.
 
 ## 9. Base de datos
 
@@ -75,7 +105,9 @@ Las funcionalidades deberán probarse antes de integrar cambios al proyecto comp
 
 Se deberán verificar las operaciones principales, las validaciones, el acceso a la base de datos y la compatibilidad entre los subsistemas.
 
-[Indicar comandos/pasos para ejecutar las pruebas.]
+Las pruebas usan el perfil `test` con una base H2 en memoria, por lo que no requieren MySQL ni el archivo `.env`. Se ejecutan con `./mvnw test` (o `.\mvnw.cmd test` en Windows).
+
+GitHub Actions ejecuta `./mvnw clean verify` en cada pull request hacia `main`; el PR no puede fusionarse si falla.
 
 ## 11. Control de versiones y colaboración
 
