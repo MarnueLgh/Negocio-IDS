@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="PATRON">%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="RUTA_LOGS">./logs</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Consola" target="SYSTEM_OUT">
+            <PatternLayout pattern="${PATRON}"/>
+        </Console>
+
+        <RollingFile name="ArchivoApp"
+                     fileName="${RUTA_LOGS}/scvi.log"
+                     filePattern="${RUTA_LOGS}/scvi-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${PATRON}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <RollingFile name="ArchivoErrores"
+                     fileName="${RUTA_LOGS}/scvi-error.log"
+                     filePattern="${RUTA_LOGS}/scvi-error-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="${PATRON}"/>
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="mx.unam.fca.scvi" level="DEBUG" additivity="false">
+            <AppenderRef ref="Consola"/>
+            <AppenderRef ref="ArchivoApp"/>
+            <AppenderRef ref="ArchivoErrores"/>
+        </Logger>
+        <Logger name="org.hibernate.SQL" level="WARN"/>
+        <Logger name="org.springframework" level="INFO"/>
+        <Root level="INFO">
+            <AppenderRef ref="Consola"/>
+            <AppenderRef ref="ArchivoApp"/>
+        </Root>
+    </Loggers>
+</Configuration>
