@@ -24,7 +24,8 @@ import java.time.LocalDate;
  * (script scvi/sql/01_crear_articulo.sql). Las demás historias que usan
  * "ID artículo" se relacionan con esta entidad mediante articuloId.
  * Reglas de negocio: el código de barras es único; las validaciones de
- * entrada se aplican en ArticuloSolicitudDto.
+ * entrada se aplican en ArticuloSolicitudDto; solo un artículo activo puede
+ * recibir mercancía (INV-07).
  *
  * @author Olvera Ramírez Anuar Manuel Equipo 3
  *
@@ -90,4 +91,9 @@ public class Articulo {
     private TipoArticulo tipo;
 
     private LocalDate fechaCaducidad;
+
+    /** Un artículo nuevo nace activo; solo los activos reciben mercancía (INV-07). */
+    @Builder.Default
+    @Column(nullable = false)
+    private Boolean activo = true;
 }

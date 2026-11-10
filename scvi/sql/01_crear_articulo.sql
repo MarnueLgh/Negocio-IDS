@@ -18,6 +18,7 @@ CREATE TABLE Articulo (
     costo              DECIMAL(12,2) NOT NULL,
     tipo               VARCHAR(15)   NOT NULL,
     fechaCaducidad     DATE          NULL,
+    activo             BOOLEAN       NOT NULL DEFAULT TRUE, -- INV-07: solo un artículo activo puede recibir mercancía.
     CONSTRAINT pkArticulo PRIMARY KEY (articuloId),
     CONSTRAINT uqArticuloCodigoBarras UNIQUE (codigoBarras),
     CONSTRAINT ckArticuloExistencias CHECK (existencias >= 0 AND existenciasMinimas >= 0),
