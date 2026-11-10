@@ -9,7 +9,7 @@
 |---|---|
 | **Tecnologías** | Java + MySQL |
 | **Metodología** | Extreme Programming (XP) + Scrum |
-| **Versión** | 1.0 |
+| **Versión** | 1.1 |
 | **Fecha** | 21 de agosto de 2026 |
 
 ---
@@ -141,6 +141,19 @@ Los métodos deberán:
 - Representar una sola responsabilidad.
 
 No se utilizarán nombres ambiguos que no permitan determinar qué realiza el método.
+
+#### 4.7.1. Métodos que requieren nombre en inglés
+
+Conforme a la regla 3.1, los siguientes métodos conservan el nombre que exige el framework o el lenguaje, porque con un nombre en español dejarían de funcionar:
+
+| Caso | Ejemplo | Motivo |
+|---|---|---|
+| Consultas derivadas de Spring Data | `existsByCodigoBarras`, `findByNombre` | Spring arma la consulta a partir de las palabras clave del nombre (`findBy`, `existsBy`, `And`, etc.). |
+| Métodos heredados de `JpaRepository` | `save`, `findAll`, `findById` | Los define la librería. |
+| Reglas `@AssertTrue` de Jakarta Validation | `isFechaCaducidadValida()` | Solo se evalúan métodos con prefijo `is` o `get`; con otro nombre la regla se ignora sin aviso. |
+| Generados por Lombok o sobrescritos de `Object` | `builder()`, `build()`, `toString()`, `equals()` | Los exige la herramienta o el lenguaje. |
+
+El resto del nombre se escribe en español cuando sea posible (por ejemplo, `existsByCodigoBarras`). Todos los demás métodos, clases, atributos y nombres de pruebas siguen en español.
 
 ### 4.8. Getters y setters
 
@@ -730,6 +743,14 @@ Ante cualquier situación que no esté contemplada se deberá:
 6. Aplicarla de manera uniforme.
 
 El objetivo final será que cualquier integrante pueda tomar el código de Compras, Ventas o Inventario y comprenderlo sin depender de la persona que originalmente lo escribió.
+
+---
+
+## Historial de cambios
+
+| Versión | Fecha | Cambio | Motivo | Equipos afectados | Responsable |
+|---|---|---|---|---|---|
+| 1.1 | 09-11-2026 | Se agrega la regla 4.7.1 con los métodos que requieren nombre en inglés. | Spring Data, Jakarta Validation y Lombok dependen del nombre del método; aclara la excepción que ya permitía la regla 3.1. | 1, 2 y 3 | Olvera Ramírez Anuar Manuel (Equipo 3) |
 
 ---
 
