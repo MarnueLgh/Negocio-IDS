@@ -2,22 +2,17 @@ package mx.unam.fca.scvi.inventario.repositorio;
 
 import mx.unam.fca.scvi.inventario.modelo.Bodega;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
- * Contrato para el acceso a datos de la entidad Bodega.
+ * Contrato de acceso a datos de la tabla Bodega.
+ * Responsabilidad principal: consultar las bodegas a las que llega la
+ * mercancía (INV-07); Spring Data JPA genera la implementación.
  *
- * @author Equipo 3
+ * @author Olvera Ramírez Anuar Manuel Equipo 3
+ *
+ * Fecha creación: 09-11-2026
+ *
+ * Fecha modificación: 09-11-2026
  */
-@Repository
 public interface IBodegaRepositorio extends JpaRepository<Bodega, Long> {
-
-    /**
-     * Comprueba si existe una bodega registrada con el nombre indicado.
-     * NOTA: Convención de Spring Data JPA en inglés obligatoria.
-     *
-     * @param nombre Nombre exacto de la bodega a buscar.
-     * @return true si existe, false en caso contrario.
-     */
-    boolean existsByNombre(String nombre);
 }

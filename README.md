@@ -73,10 +73,16 @@ scvi/
 ├── .env.example                      # Plantilla de credenciales (copiar como .env)
 ├── mvnw, mvnw.cmd                    # Maven Wrapper
 ├── pom.xml                           # Dependencias y construcción
+├── sql/                              # Scripts de creación de tablas (ejecutar en orden)
 └── src/
     ├── main/
     │   ├── java/mx/unam/fca/scvi/
-    │   │   └── ScviApplication.java          # Clase de arranque
+    │   │   ├── ScviApplication.java          # Clase de arranque
+    │   │   └── inventario/                   # Subsistema de Inventario
+    │   │       ├── modelo/                   # Entidades, enums y DTOs
+    │   │       ├── repositorio/              # Interfaces de Spring Data JPA
+    │   │       ├── servicio/                 # Lógica de negocio y excepciones
+    │   │       └── controlador/              # API REST
     │   └── resources/
     │       ├── application.properties        # Configuración común (BD, puerto 8081, Actuator)
     │       └── log4j2-spring.xml             # Configuración de bitácoras
@@ -93,9 +99,68 @@ Las clases nuevas van en subpaquetes de `mx.unam.fca.scvi` (por ejemplo, `mx.una
 
 El sistema utiliza MySQL para almacenar la información compartida entre los subsistemas.
 
-* **Script de creación:** [ruta del script SQL].
-* **Tablas principales:** [indicar las tablas].
-* **Relaciones compartidas:** [describir las relaciones relevantes entre compras, ventas e inventario].
+* **Scripts de creación:** carpeta `scvi/sql/`, numerados en orden de ejecución. Se ejecutan a mano en MySQL antes de arrancar la aplicación, porque `ddl-auto=validate` solo comprueba que las tablas coincidan con las entidades.
+  * `01_crear_articulo.sql`: tabla `Articulo` (INV-04; columna `activo` agregada en INV-07).
+  * `02_crear_bodega.sql`: tabla `Bodega` con dos bodegas iniciales (INV-07).
+  * `03_crear_recepcion.sql`: tabla `Recepcion` (INV-07).
+* **Tablas principales:**
+  * `Articulo`: catálogo de artículos. Su llave `articuloId` es el "ID artículo" que usan las demás historias.
+  * `Bodega`: bodegas donde se recibe la mercancía (estructura mínima: `bodegaId`, `nombre`).
+  * `Recepcion`: llegadas de mercancía a una bodega.
+* **Relaciones:** `Recepcion` → `Articulo` (`fkRecepcionArticulo`) y `Recepcion` → `Bodega` (`fkRecepcionBodega`), ambas muchos a uno.
+
+Hibernate usa `PhysicalNamingStrategyStandardImpl`, así que los nombres de tablas y columnas son idénticos a los de las entidades (regla 7). Sin esa configuración, `codigoBarras` se convertiría en `codigo_barras`.
+
+### Reglas de negocio de `Articulo` (INV-04)
+
+* El código de barras es único (`uqArticuloCodigoBarras`); un duplicado responde HTTP 409.
+* Un artículo `PERECEDERO` exige fecha de caducidad. En uno `NO_PERECEDERO` la fecha se descarta.
+* Las existencias, el precio y el costo no pueden ser negativos, y las existencias mínimas no pueden superar a las máximas.
+* `proveedor` es texto libre hasta que Compras cree la tabla `Proveedor`; entonces pasará a llave foránea.
+* `precio` y `costo` usan `BigDecimal` en Java y `DECIMAL(12,2)` en MySQL, como recomienda el manual de JPA de la materia. Esto difiere de la regla 4.11 (Double), por lo que se propondrá el cambio a los demás equipos.
+
+API (`/api/inventario/articulos`):
+
+| Método | Ruta | Respuesta |
+|---|---|---|
+| `POST` | `/api/inventario/articulos` | 201 con el artículo creado; 400 si los datos son inválidos; 409 si el código de barras ya existe |
+| `GET` | `/api/inventario/articulos` | 200 con la lista de artículos |
+| `GET` | `/api/inventario/articulos/{articuloId}` | 200 con el artículo; 404 si no existe |
+
+### Reglas de negocio de `Recepcion` (INV-07)
+
+* Toda recepción exige artículo, bodega destino, cantidad mayor que cero, fecha de recepción (no futura), ubicación y estado.
+* La mercancía entra siempre a una `Bodega`: `Recepcion` solo tiene llave foránea hacia `Bodega` y no hacia `Almacen`.
+* El artículo debe existir (404) y estar activo (400). La bodega debe existir (404).
+* Si el artículo es `PERECEDERO`, se exigen lote y fecha de caducidad posterior a la fecha de recepción (400). En uno `NO_PERECEDERO` ambos se descartan.
+* `estado` es la condición de la mercancía: `BUENO` suma la cantidad a `Articulo.existencias`; `DANADO` queda registrado pero no suma.
+* Guardar la recepción y sumar las existencias ocurren en una sola transacción. La suma se hace con un `UPDATE` atómico para que dos recepciones simultáneas no se pisen.
+* Superar `existenciasMaximas` no bloquea la recepción, porque la mercancía ya está físicamente en la bodega: se registra una advertencia en la bitácora y la respuesta trae `excedeMaximo: true`. El tope corresponde a Compras, al generar la orden.
+* `ubicacion` es texto libre (p. ej. "Pasillo 3, Anaquel B") hasta que exista la tabla `Anaquel`.
+* El stock es global por artículo (`Articulo.existencias`); el stock por bodega se agregará con la historia de traspaso Bodega → Almacén.
+* La API responde con `RecepcionRespuestaDto` y nunca expone la entidad `Recepcion`.
+
+API (`/api/inventario/recepciones`):
+
+| Método | Ruta | Respuesta |
+|---|---|---|
+| `POST` | `/api/inventario/recepciones` | 201 con la recepción creada; 400 si los datos son inválidos, el artículo está inactivo o falta lote/caducidad de un perecedero; 404 si el artículo o la bodega no existen |
+| `GET` | `/api/inventario/recepciones` | 200 con la lista de recepciones |
+
+Ejemplo de cuerpo para `POST`:
+
+```json
+{
+  "articuloId": 1,
+  "bodegaId": 1,
+  "cantidad": 20,
+  "fechaRecepcion": "2026-11-09",
+  "ubicacion": "Pasillo 3, Anaquel B",
+  "estado": "BUENO",
+  "lote": "L-2026-11",
+  "fechaCaducidad": "2026-12-31"
+}
+```
 
 Los cambios en la estructura de la base de datos deberán coordinarse entre los equipos involucrados.
 
