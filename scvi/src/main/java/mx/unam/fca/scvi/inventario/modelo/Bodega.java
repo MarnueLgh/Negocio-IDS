@@ -35,10 +35,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class Bodega {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long bodegaId;
 
     @Column(nullable = false, length = 100)
