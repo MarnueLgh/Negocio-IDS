@@ -1,0 +1,73 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="2KpEeQiLlmqOYsebT_no">
+    <mxGraphModel dx="1909" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BvYykzkuOshlOgy-TSVX-10" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: left;&quot;&gt;idArticulo&lt;/span&gt;&lt;span style=&quot;text-align: left;&quot;&gt;&amp;nbsp;NUMERIC(3,0)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="270" width="220" x="430" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="BvYykzkuOshlOgy-TSVX-11" parent="BvYykzkuOshlOgy-TSVX-10" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;nombre VARCHAR (20)&lt;/div&gt;&lt;div&gt;precio NUMERIC (7,2)&lt;/div&gt;&lt;div&gt;costo NUMERIC (7,2)&lt;/div&gt;&lt;div&gt;estado CHAR (1)&lt;/div&gt;&lt;div&gt;codigoBarras CHAR (13)&lt;/div&gt;&lt;div&gt;unidadMedida CHAR (2)&lt;/div&gt;&lt;div&gt;perecedero CHAR (1)&lt;/div&gt;&lt;div&gt;existenciaMinima NUMERIC (3,0)&lt;/div&gt;&lt;div&gt;existenciaMaxima NUMERIC (3,0)&lt;/div&gt;&lt;div&gt;descripcion TEXT&lt;/div&gt;&lt;div&gt;tamanio&amp;nbsp;&lt;/div&gt;&lt;div&gt;marca&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BvYykzkuOshlOgy-TSVX-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Articulo" vertex="1">
+          <mxGeometry height="30" width="60" x="430" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="BvYykzkuOshlOgy-TSVX-13" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: left;&quot;&gt;idProveedor&lt;/span&gt;&lt;span style=&quot;text-align: left;&quot;&gt;&amp;nbsp;NUMERIC(3,0)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="220" width="220" x="1200" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="BvYykzkuOshlOgy-TSVX-14" parent="BvYykzkuOshlOgy-TSVX-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;nombre VARCHAR(20)&lt;/div&gt;&lt;div&gt;domicilio VARCHAR(30)&lt;/div&gt;&lt;div&gt;telefono CHAR (10)&lt;/div&gt;&lt;div&gt;RFC CHAR (13)&lt;/div&gt;&lt;div&gt;limiteCredito NUMERIC (8,2)&lt;/div&gt;&lt;div&gt;diasCredito NUMERIC (3,0)&lt;/div&gt;&lt;div&gt;interesesCredito NUMERIC (5,2)&lt;/div&gt;&lt;div&gt;nombreContacto VARCHAR (25)&lt;/div&gt;&lt;div&gt;banco CHAR (1)&lt;/div&gt;&lt;div&gt;numeroCuenta (o) CHAR (18)&lt;/div&gt;&lt;div&gt;estado CHAR (1)&lt;/div&gt;&lt;div&gt;motivoBaja (o) TEXT&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BvYykzkuOshlOgy-TSVX-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Proveedor" vertex="1">
+          <mxGeometry height="30" width="60" x="1200" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Notas para cliente&lt;div&gt;Proveedor&lt;/div&gt;&lt;div&gt;(telefono) los proveedores solo tienen numeros nacionales o internacionales. +52 necesario o redundante CHAR(10) vs (13).&lt;/div&gt;&lt;div&gt;(numeroCuenta) Es una numero de CLABE o que?&lt;/div&gt;&lt;div&gt;&amp;nbsp;Articulo&lt;br&gt;Un articulo solo viene de un proveedor o puede venir de varios&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="370" x="200" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-11" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: left;&quot;&gt;idCliente NUMERIC(3,0)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="190" width="250" x="-40" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-12" parent="NWpcVV4MzqJJlN4CR4zH-11" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;nombre VARCHAR (20)&lt;/div&gt;&lt;div&gt;domicilio VARCHAR (30)&lt;/div&gt;&lt;div&gt;RFC CHAR (13)&lt;/div&gt;&lt;div&gt;limiteCredito NUMERIC (8,2)&lt;/div&gt;&lt;div&gt;diasCredito NUMERIC (3,0)&lt;/div&gt;&lt;div&gt;nombreContacto VARCHAR (25)&lt;/div&gt;&lt;div&gt;estado CHAR (1)&lt;/div&gt;&lt;div&gt;motivoBaja (o) TEXT&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="250" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Cliente" vertex="1">
+          <mxGeometry height="30" width="80" x="-40" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-22" parent="1" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;" value="&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;CHECK Si es perecedero que la fecha de cad fuerce obligado o quitar atributo perecedeto en articulo?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="240" x="190" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-26" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: left;&quot;&gt;idTelefono NUMERIC(3,0)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="180" x="-310" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-27" parent="NWpcVV4MzqJJlN4CR4zH-26" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;numero CHAR (10)&lt;/div&gt;&lt;div&gt;idCliente NUMERIC (3,0)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NWpcVV4MzqJJlN4CR4zH-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="telefono" vertex="1">
+          <mxGeometry height="30" width="80" x="-310" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="vd3Xvvs9Wqyohm1mZ6IR-1" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;text-align: left;&quot;&gt;idInventario NUMERIC(3,0)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="180" width="190" x="880" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="vd3Xvvs9Wqyohm1mZ6IR-2" parent="vd3Xvvs9Wqyohm1mZ6IR-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;pasillo CHAR (1)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;estante CHAR (1)&lt;/div&gt;&lt;div&gt;anaquel CHAR (1)&lt;/div&gt;&lt;div&gt;sitio CHAR (1)&lt;/div&gt;&lt;div&gt;lote (o) CHAR (8)&lt;/div&gt;&lt;div&gt;caducidad (o) DATE&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;idArticulo NUMERIC (3)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="190" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vd3Xvvs9Wqyohm1mZ6IR-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Inventario" vertex="1">
+          <mxGeometry height="30" width="60" x="880" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="vd3Xvvs9Wqyohm1mZ6IR-7" edge="1" parent="1" source="BvYykzkuOshlOgy-TSVX-11" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToOne;startArrow=ERmandOne;rounded=0;defaultLabelBackgroundColor=page;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" target="vd3Xvvs9Wqyohm1mZ6IR-2" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="530" y="620" as="sourcePoint" />
+            <mxPoint x="630" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vd3Xvvs9Wqyohm1mZ6IR-9" edge="1" parent="1" source="NWpcVV4MzqJJlN4CR4zH-12" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERmandOne;rounded=0;defaultLabelBackgroundColor=page;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="NWpcVV4MzqJJlN4CR4zH-27" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="60" y="545" as="sourcePoint" />
+            <mxPoint x="160" y="445" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
