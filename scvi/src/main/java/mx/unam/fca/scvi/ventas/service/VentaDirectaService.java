@@ -37,6 +37,16 @@ import org.springframework.transaction.annotation.Transactional;
  * Venta directa: se cobra y se entrega en el momento. El precio y las existencias vienen de Inventario
  * (síncrono, por InventarioGateway); la comisión del cajero se genera al instante (síncrono);
  * la factura, si se pidió, se emite por evento en proceso.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @Service
 @Transactional

@@ -9,6 +9,20 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+/**
+ * Entidad que mapea la tabla CuentaPorCobrar.
+ * Se genera al facturar un pedido a crédito y controla el saldo pendiente y la fecha límite de pago.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Entity //Jakarta
 //Lombok
 @Data //Getters and setters

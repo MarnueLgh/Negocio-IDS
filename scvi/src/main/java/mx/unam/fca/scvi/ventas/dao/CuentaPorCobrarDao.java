@@ -11,6 +11,20 @@ import mx.unam.fca.scvi.ventas.model.EstadoCuenta;
 import mx.unam.fca.scvi.ventas.model.PagoCuentaPorCobrar;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Acceso a datos de las tablas CuentaPorCobrar y PagoCuentaPorCobrar.
+ * Incluye las consultas de los reportes 18 a 20 y el saldo pendiente de un cliente.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Repository
 public class CuentaPorCobrarDao {
 

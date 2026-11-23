@@ -12,6 +12,19 @@ import mx.unam.fca.scvi.ventas.model.Venta;
 import mx.unam.fca.scvi.ventas.model.VentaDetalle;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Acceso a datos de las tablas Venta y VentaDetalle, incluida la consulta del reporte 7.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Repository
 public class VentaDao {
 

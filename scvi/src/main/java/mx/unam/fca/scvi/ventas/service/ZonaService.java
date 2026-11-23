@@ -7,6 +7,20 @@ import mx.unam.fca.scvi.ventas.model.Zona;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Reglas de negocio de las zonas: nombre único, unir y dividir zonas.
+ * Una zona con clientes o vendedores no se puede eliminar ni desactivar.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Service
 @Transactional
 public class ZonaService {

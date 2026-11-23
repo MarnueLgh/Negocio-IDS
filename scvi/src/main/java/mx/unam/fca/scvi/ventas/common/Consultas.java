@@ -12,7 +12,19 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/** Consultas SQL nativas para los reportes (agrupaciones con varias tablas) devueltas como filas columna -> valor. */
+/**
+ * Consultas SQL nativas para los reportes (agrupaciones con varias tablas) devueltas como filas columna -> valor.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 public final class Consultas {
 
     private Consultas() {

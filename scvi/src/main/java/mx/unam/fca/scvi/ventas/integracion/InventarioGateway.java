@@ -5,6 +5,16 @@ import java.util.Optional;
 /**
  * Contrato síncrono con el subsistema de Inventario (la consistencia es inmediata: no se vende lo que no existe).
  * Lo implementa InventarioLocalGateway sobre la tabla Articulo de Inventario.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 public interface InventarioGateway {
 

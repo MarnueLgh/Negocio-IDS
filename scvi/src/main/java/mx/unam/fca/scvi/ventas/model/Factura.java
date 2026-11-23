@@ -11,6 +11,16 @@ import java.time.LocalDate;
 /**
  * Factura de una venta directa (ventaId) o de un pedido (pedidoId). No se modifica: se cancela y se crea otra
  * (sustituyeFacturaId apunta a la factura cancelada que reemplaza).
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @Entity //Jakarta
 //Lombok

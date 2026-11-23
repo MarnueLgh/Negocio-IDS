@@ -11,6 +11,20 @@ import mx.unam.fca.scvi.ventas.dao.ZonaDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Reportes 1 a 6: comisiones, ventas por vendedor y relación entre vendedores, clientes y zonas.
+ * Avisa cuando no hay datos o cuando el Id buscado no existe.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Service
 @Transactional
 public class ReporteVendedorService {

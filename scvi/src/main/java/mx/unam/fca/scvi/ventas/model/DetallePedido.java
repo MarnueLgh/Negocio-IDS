@@ -7,7 +7,19 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import java.math.BigDecimal;
 
-/** Renglón de un pedido. cantidadPendiente es lo que aún no se entrega; promesa = se prometió con anticipación. */
+/**
+ * Renglón de un pedido. cantidadPendiente es lo que aún no se entrega; promesa = se prometió con anticipación.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Entity //Jakarta
 //Lombok
 @Data //Getters and setters

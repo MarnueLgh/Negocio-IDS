@@ -7,6 +7,20 @@ import java.util.Optional;
 import mx.unam.fca.scvi.ventas.model.Cliente;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Acceso a datos de la tabla Cliente.
+ * La baja es lógica: el cliente queda inactivo y se conserva su historial de ventas.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Repository
 public class ClienteDao {
 

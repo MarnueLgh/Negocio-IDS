@@ -3,7 +3,19 @@ package mx.unam.fca.scvi.ventas.common;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-/** Cálculos monetarios (BigDecimal, 2 decimales, IVA 16%). */
+/**
+ * Cálculos monetarios (BigDecimal, 2 decimales, IVA 16%).
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 public final class Dinero {
 
     public static final BigDecimal IVA = new BigDecimal("0.16");

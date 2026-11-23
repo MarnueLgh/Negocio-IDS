@@ -10,6 +10,16 @@ import org.springframework.stereotype.Repository;
  * Implementación de InventarioGateway sobre la tabla Articulo del subsistema de Inventario
  * (script scvi/sql/01_crear_articulo.sql). Para Ventas el código del artículo es su codigoBarras.
  * Las existencias se descuentan con una sola sentencia condicionada para que nunca queden en negativo.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @Repository
 public class InventarioLocalGateway implements InventarioGateway {

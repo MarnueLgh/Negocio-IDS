@@ -23,6 +23,16 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Venta no directa. El pedido no descuenta inventario: se descuenta hasta la entrega (parcial si falta stock;
  * lo no surtido queda pendiente). Un pedido no puede exceder el inventario salvo que se prometa con anticipación.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @Service
 @Transactional

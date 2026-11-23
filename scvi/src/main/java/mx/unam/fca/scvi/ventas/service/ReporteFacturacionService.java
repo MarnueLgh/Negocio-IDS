@@ -13,7 +13,19 @@ import mx.unam.fca.scvi.ventas.model.Pedido;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/** Reportes de pedidos pendientes (9 a 11) y de facturación (13 a 17). Los reportes 12 y 18 a 20 viven en sus servicios. */
+/**
+ * Reportes de pedidos pendientes (9 a 11) y de facturación (13 a 17). Los reportes 12 y 18 a 20 viven en sus servicios.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Service
 @Transactional
 public class ReporteFacturacionService {

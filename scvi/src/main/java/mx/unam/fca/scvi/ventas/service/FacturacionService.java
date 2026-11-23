@@ -26,6 +26,16 @@ import org.springframework.transaction.annotation.Transactional;
  * Facturación. Una factura no se modifica: se cancela y se crea otra. Las de pedido generan cuenta por cobrar si
  * hay días de crédito y comisión al vendedor; las de venta directa se pagaron en el momento (sin cuenta por cobrar,
  * la comisión del cajero ya se generó con la venta). Facturar no mueve el inventario.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @Service
 @Transactional

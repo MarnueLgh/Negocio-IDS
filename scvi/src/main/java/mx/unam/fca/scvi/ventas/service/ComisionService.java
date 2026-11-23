@@ -18,6 +18,16 @@ import org.springframework.transaction.annotation.Transactional;
  * Comisiones de vendedores y cajeros. Todos los tipos de venta generan comisión:
  * la venta directa al completarse (cajero) y la venta por pedido al facturarse (vendedor).
  * Si se cancela la venta o la factura, la comisión se cancela.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @Service
 @Transactional

@@ -4,7 +4,19 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-/** Validaciones pequeñas y reutilizables para los servicios. */
+/**
+ * Validaciones pequeñas y reutilizables para los servicios.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 public final class Reglas {
 
     private Reglas() {

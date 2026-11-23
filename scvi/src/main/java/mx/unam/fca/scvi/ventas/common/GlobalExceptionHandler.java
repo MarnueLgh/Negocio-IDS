@@ -15,6 +15,16 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 /**
  * Traduce excepciones de negocio a respuestas HTTP uniformes.
  * Solo aplica a los controladores de Ventas, para no cambiar las respuestas de los demás subsistemas.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @RestControllerAdvice(basePackages = "mx.unam.fca.scvi.ventas")
 public class GlobalExceptionHandler {

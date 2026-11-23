@@ -10,6 +10,20 @@ import mx.unam.fca.scvi.ventas.model.EstadoPedido;
 import mx.unam.fca.scvi.ventas.model.Pedido;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Acceso a datos de las tablas Pedido y DetallePedido, incluidas las consultas de los reportes 9 a 11.
+ * Un pedido sigue pendiente mientras no se factura.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Repository
 public class PedidoDao {
     /** Un pedido sigue pendiente mientras no se factura: por surtir (PENDIENTE) o entregado sin facturar (ENTREGADO). */

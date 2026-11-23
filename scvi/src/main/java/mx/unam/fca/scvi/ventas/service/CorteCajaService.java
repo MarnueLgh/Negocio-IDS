@@ -19,6 +19,16 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Inicio y corte de caja. Al inicio del día se entrega un importe al cajero; al corte debe coincidir
  * importe inicial + ventas cobradas en efectivo con el efectivo físico. Si no, queda registrada la diferencia.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
  */
 @Service
 @Transactional

@@ -11,7 +11,19 @@ import mx.unam.fca.scvi.ventas.service.EmpleadoService;
 import mx.unam.fca.scvi.ventas.service.ZonaService;
 import org.springframework.stereotype.Component;
 
-/** Fábrica de datos de prueba (zonas, vendedores, cajeros y clientes únicos) para las pruebas de integración. */
+/**
+ * Fábrica de datos de prueba (zonas, vendedores, cajeros y clientes únicos) para las pruebas de integración.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Component
 public class PruebaDatos {
 

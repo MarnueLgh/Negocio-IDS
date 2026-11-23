@@ -8,7 +8,19 @@ import java.util.Map;
 import mx.unam.fca.scvi.ventas.common.Consultas;
 import org.springframework.stereotype.Repository;
 
-/** Consultas de facturación (reportes 13 a 17). Solo facturas EMITIDAS. */
+/**
+ * Consultas de facturación (reportes 13 a 17). Solo facturas EMITIDAS.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Repository
 public class ReporteFacturacionDao {
 

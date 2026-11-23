@@ -16,7 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/** Reportes 9 a 20 del subsistema de ventas (fechas en formato AAAA-MM-DD). */
+/**
+ * Reportes 9 a 20 del subsistema de ventas (fechas en formato AAAA-MM-DD).
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @RestController
 @RequestMapping("/api/reportes")
 public class ReporteFacturacionController {

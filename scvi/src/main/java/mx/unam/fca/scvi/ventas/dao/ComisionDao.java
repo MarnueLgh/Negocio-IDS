@@ -7,6 +7,19 @@ import java.util.List;
 import mx.unam.fca.scvi.ventas.model.Comision;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Acceso a datos de la tabla Comision: registro, cancelación por venta o factura y consulta por empleado.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Repository
 public class ComisionDao {
 

@@ -13,6 +13,19 @@ import mx.unam.fca.scvi.ventas.model.Venta;
 import mx.unam.fca.scvi.ventas.model.VentaDetalle;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Pruebas unitarias del texto del ticket de venta directa.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 class TicketServiceTest {
 
     @Test

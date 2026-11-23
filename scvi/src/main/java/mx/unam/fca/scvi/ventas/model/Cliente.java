@@ -7,6 +7,20 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import java.math.BigDecimal;
 
+/**
+ * Entidad que mapea la tabla Cliente (script scvi/sql/04_crear_ventas_zonas_empleados_clientes.sql).
+ * El RFC es único y el cliente pertenece a una sola zona.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
 @Entity //Jakarta
 //Lombok
 @Data //Getters and setters
