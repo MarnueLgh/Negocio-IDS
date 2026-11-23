@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -6,14 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import mx.edu.scvi.ventas.PruebaDatos;
-import mx.edu.scvi.ventas.PruebaIntegracion;
-import mx.edu.scvi.ventas.common.ReglaNegocioException;
-import mx.edu.scvi.ventas.integracion.InventarioGateway;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.EstadoPedido;
-import mx.edu.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.PruebaDatos;
+import mx.unam.fca.scvi.ventas.PruebaIntegracion;
+import mx.unam.fca.scvi.ventas.common.ReglaNegocioException;
+import mx.unam.fca.scvi.ventas.integracion.InventarioGateway;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.EstadoPedido;
+import mx.unam.fca.scvi.ventas.model.Zona;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

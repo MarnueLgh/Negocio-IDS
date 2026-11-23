@@ -1,9 +1,9 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
 import java.util.List;
-import mx.edu.scvi.ventas.common.Reglas;
-import mx.edu.scvi.ventas.model.Zona;
-import mx.edu.scvi.ventas.service.ZonaService;
+import mx.unam.fca.scvi.ventas.common.Reglas;
+import mx.unam.fca.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.service.ZonaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

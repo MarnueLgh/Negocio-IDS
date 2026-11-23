@@ -1,11 +1,11 @@
-package mx.edu.scvi.ventas.dao;
+package mx.unam.fca.scvi.ventas.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.TipoEmpleado;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.TipoEmpleado;
 
 /** Base de VendedorDao y VendedorCajaDao: misma tabla 'empleado', filtrada por tipo. */
 public abstract class EmpleadoDao {

@@ -1,13 +1,13 @@
-package mx.edu.scvi.ventas.dao;
+package mx.unam.fca.scvi.ventas.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import mx.edu.scvi.ventas.model.EstadoFactura;
-import mx.edu.scvi.ventas.model.Factura;
-import mx.edu.scvi.ventas.model.FacturaDetalle;
+import mx.unam.fca.scvi.ventas.model.EstadoFactura;
+import mx.unam.fca.scvi.ventas.model.Factura;
+import mx.unam.fca.scvi.ventas.model.FacturaDetalle;
 import org.springframework.stereotype.Repository;
 
 @Repository

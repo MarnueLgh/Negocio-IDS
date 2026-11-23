@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.dao;
+package mx.unam.fca.scvi.ventas.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import mx.edu.scvi.ventas.model.CuentaPorCobrar;
-import mx.edu.scvi.ventas.model.EstadoCuenta;
-import mx.edu.scvi.ventas.model.PagoCuentaPorCobrar;
+import mx.unam.fca.scvi.ventas.model.CuentaPorCobrar;
+import mx.unam.fca.scvi.ventas.model.EstadoCuenta;
+import mx.unam.fca.scvi.ventas.model.PagoCuentaPorCobrar;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.common;
+package mx.unam.fca.scvi.ventas.common;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

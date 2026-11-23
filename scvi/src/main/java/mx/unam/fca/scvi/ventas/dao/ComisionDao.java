@@ -1,10 +1,10 @@
-package mx.edu.scvi.ventas.dao;
+package mx.unam.fca.scvi.ventas.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.time.LocalDate;
 import java.util.List;
-import mx.edu.scvi.ventas.model.Comision;
+import mx.unam.fca.scvi.ventas.model.Comision;
 import org.springframework.stereotype.Repository;
 
 @Repository

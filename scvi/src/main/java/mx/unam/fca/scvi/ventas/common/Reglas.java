@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.common;
+package mx.unam.fca.scvi.ventas.common;
 
 import java.time.LocalDate;
 import java.util.List;

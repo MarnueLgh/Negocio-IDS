@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.common;
+package mx.unam.fca.scvi.ventas.common;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-/** Traduce excepciones de negocio a respuestas HTTP uniformes. */
-@RestControllerAdvice
+/**
+ * Traduce excepciones de negocio a respuestas HTTP uniformes.
+ * Solo aplica a los controladores de Ventas, para no cambiar las respuestas de los demás subsistemas.
+ */
+@RestControllerAdvice(basePackages = "mx.unam.fca.scvi.ventas")
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(NoEncontradoException.class)

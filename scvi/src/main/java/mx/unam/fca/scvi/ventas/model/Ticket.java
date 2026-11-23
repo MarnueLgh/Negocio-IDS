@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.model;
+package mx.unam.fca.scvi.ventas.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,6 +20,7 @@ public class Ticket {
     Long ticketId;
     Long ventaId;
     String folio;
+    @Column(length = 2000) // el texto del ticket no cabe en los 255 caracteres por defecto
     String contenido;
     LocalDateTime fecha;
 }

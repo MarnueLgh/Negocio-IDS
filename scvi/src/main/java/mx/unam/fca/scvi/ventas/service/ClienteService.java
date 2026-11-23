@@ -1,13 +1,13 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.regex.Pattern;
-import mx.edu.scvi.ventas.common.Reglas;
-import mx.edu.scvi.ventas.dao.ClienteDao;
-import mx.edu.scvi.ventas.dao.ZonaDao;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.common.Reglas;
+import mx.unam.fca.scvi.ventas.dao.ClienteDao;
+import mx.unam.fca.scvi.ventas.dao.ZonaDao;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.Zona;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

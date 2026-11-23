@@ -1,22 +1,22 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import mx.edu.scvi.ventas.common.Dinero;
-import mx.edu.scvi.ventas.common.NoEncontradoException;
-import mx.edu.scvi.ventas.common.Reglas;
-import mx.edu.scvi.ventas.dao.CuentaPorCobrarDao;
-import mx.edu.scvi.ventas.dao.PedidoDao;
-import mx.edu.scvi.ventas.integracion.ArticuloRef;
-import mx.edu.scvi.ventas.integracion.InventarioGateway;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.DetallePedido;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.EstadoPedido;
-import mx.edu.scvi.ventas.model.Pedido;
-import mx.edu.scvi.ventas.model.TipoEmpleado;
+import mx.unam.fca.scvi.ventas.common.Dinero;
+import mx.unam.fca.scvi.ventas.common.NoEncontradoException;
+import mx.unam.fca.scvi.ventas.common.Reglas;
+import mx.unam.fca.scvi.ventas.dao.CuentaPorCobrarDao;
+import mx.unam.fca.scvi.ventas.dao.PedidoDao;
+import mx.unam.fca.scvi.ventas.integracion.ArticuloRef;
+import mx.unam.fca.scvi.ventas.integracion.InventarioGateway;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.DetallePedido;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.EstadoPedido;
+import mx.unam.fca.scvi.ventas.model.Pedido;
+import mx.unam.fca.scvi.ventas.model.TipoEmpleado;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

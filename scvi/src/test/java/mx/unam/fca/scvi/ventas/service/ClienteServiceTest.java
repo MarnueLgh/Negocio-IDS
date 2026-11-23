@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.math.BigDecimal;
-import mx.edu.scvi.ventas.PruebaIntegracion;
-import mx.edu.scvi.ventas.common.NoEncontradoException;
-import mx.edu.scvi.ventas.common.ReglaNegocioException;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.PruebaIntegracion;
+import mx.unam.fca.scvi.ventas.common.NoEncontradoException;
+import mx.unam.fca.scvi.ventas.common.ReglaNegocioException;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.Zona;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

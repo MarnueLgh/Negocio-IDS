@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -7,12 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import mx.edu.scvi.ventas.PruebaDatos;
-import mx.edu.scvi.ventas.PruebaIntegracion;
-import mx.edu.scvi.ventas.common.NoEncontradoException;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.PruebaDatos;
+import mx.unam.fca.scvi.ventas.PruebaIntegracion;
+import mx.unam.fca.scvi.ventas.common.NoEncontradoException;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.Zona;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

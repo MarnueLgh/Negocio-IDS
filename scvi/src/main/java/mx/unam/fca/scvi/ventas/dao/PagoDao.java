@@ -1,9 +1,9 @@
-package mx.edu.scvi.ventas.dao;
+package mx.unam.fca.scvi.ventas.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import java.util.Optional;
-import mx.edu.scvi.ventas.model.Pago;
+import mx.unam.fca.scvi.ventas.model.Pago;
 import org.springframework.stereotype.Repository;
 
 @Repository

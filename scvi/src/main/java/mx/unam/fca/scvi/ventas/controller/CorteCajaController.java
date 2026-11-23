@@ -1,11 +1,11 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import mx.edu.scvi.ventas.model.CorteCaja;
-import mx.edu.scvi.ventas.service.CorteCajaService;
+import mx.unam.fca.scvi.ventas.model.CorteCaja;
+import mx.unam.fca.scvi.ventas.service.CorteCajaService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;

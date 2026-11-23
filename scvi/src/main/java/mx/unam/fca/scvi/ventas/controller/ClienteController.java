@@ -1,8 +1,8 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
 import java.util.List;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.service.ClienteService;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.service.ClienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

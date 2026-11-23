@@ -1,14 +1,14 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Locale;
-import mx.edu.scvi.ventas.dao.TicketDao;
-import mx.edu.scvi.ventas.model.Pago;
-import mx.edu.scvi.ventas.model.Ticket;
-import mx.edu.scvi.ventas.model.Venta;
-import mx.edu.scvi.ventas.model.VentaDetalle;
+import mx.unam.fca.scvi.ventas.dao.TicketDao;
+import mx.unam.fca.scvi.ventas.model.Pago;
+import mx.unam.fca.scvi.ventas.model.Ticket;
+import mx.unam.fca.scvi.ventas.model.Venta;
+import mx.unam.fca.scvi.ventas.model.VentaDetalle;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

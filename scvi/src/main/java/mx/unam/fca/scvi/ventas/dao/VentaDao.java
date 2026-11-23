@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.dao;
+package mx.unam.fca.scvi.ventas.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -6,10 +6,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import mx.edu.scvi.ventas.common.Consultas;
-import mx.edu.scvi.ventas.model.EstadoVenta;
-import mx.edu.scvi.ventas.model.Venta;
-import mx.edu.scvi.ventas.model.VentaDetalle;
+import mx.unam.fca.scvi.ventas.common.Consultas;
+import mx.unam.fca.scvi.ventas.model.EstadoVenta;
+import mx.unam.fca.scvi.ventas.model.Venta;
+import mx.unam.fca.scvi.ventas.model.VentaDetalle;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -60,12 +60,12 @@ public class VentaDao {
 
     /** Reporte 7: ventas directas por caja y cajero en el periodo. */
     public List<Map<String, Object>> ventasPorCaja(LocalDate desde, LocalDate hasta) {
-        return Consultas.filas(em, "SELECT c.caja_id AS \"cajaId\", e.nombre AS \"cajero\", "
-                + "COUNT(v.venta_id) AS \"ventas\", COALESCE(SUM(v.total), 0) AS \"importeTotal\" "
-                + "FROM venta v JOIN corte_caja c ON c.corte_caja_id = v.corte_caja_id "
-                + "JOIN empleado e ON e.empleado_id = v.cajero_id "
-                + "WHERE v.estado = 'COMPLETADA' AND v.fecha_venta >= ? AND v.fecha_venta < ? "
-                + "GROUP BY c.caja_id, e.nombre ORDER BY \"importeTotal\" DESC",
+        return Consultas.filas(em, "SELECT c.cajaId AS `cajaId`, e.nombre AS `cajero`, "
+                + "COUNT(v.ventaId) AS `ventas`, COALESCE(SUM(v.total), 0) AS `importeTotal` "
+                + "FROM Venta v JOIN CorteCaja c ON c.corteCajaId = v.corteCajaId "
+                + "JOIN Empleado e ON e.empleadoId = v.cajeroId "
+                + "WHERE v.estado = 'COMPLETADA' AND v.fechaVenta >= ? AND v.fechaVenta < ? "
+                + "GROUP BY c.cajaId, e.nombre ORDER BY `importeTotal` DESC",
                 desde.atStartOfDay(), hasta.plusDays(1).atStartOfDay());
     }
 }

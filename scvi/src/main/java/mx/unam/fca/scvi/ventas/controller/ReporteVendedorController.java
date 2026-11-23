@@ -1,11 +1,11 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import mx.edu.scvi.ventas.model.Comision;
-import mx.edu.scvi.ventas.service.ComisionService;
-import mx.edu.scvi.ventas.service.ReporteVendedorService;
+import mx.unam.fca.scvi.ventas.model.Comision;
+import mx.unam.fca.scvi.ventas.service.ComisionService;
+import mx.unam.fca.scvi.ventas.service.ReporteVendedorService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

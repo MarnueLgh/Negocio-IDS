@@ -1,14 +1,14 @@
-package mx.edu.scvi.ventas;
+package mx.unam.fca.scvi.ventas;
 
 import java.math.BigDecimal;
 import java.util.concurrent.atomic.AtomicInteger;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.TipoEmpleado;
-import mx.edu.scvi.ventas.model.Zona;
-import mx.edu.scvi.ventas.service.ClienteService;
-import mx.edu.scvi.ventas.service.EmpleadoService;
-import mx.edu.scvi.ventas.service.ZonaService;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.TipoEmpleado;
+import mx.unam.fca.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.service.ClienteService;
+import mx.unam.fca.scvi.ventas.service.EmpleadoService;
+import mx.unam.fca.scvi.ventas.service.ZonaService;
 import org.springframework.stereotype.Component;
 
 /** Fábrica de datos de prueba (zonas, vendedores, cajeros y clientes únicos) para las pruebas de integración. */

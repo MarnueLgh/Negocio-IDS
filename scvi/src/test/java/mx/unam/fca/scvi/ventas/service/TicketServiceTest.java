@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
-import mx.edu.scvi.ventas.model.EstadoVenta;
-import mx.edu.scvi.ventas.model.FormaPago;
-import mx.edu.scvi.ventas.model.Pago;
-import mx.edu.scvi.ventas.model.Venta;
-import mx.edu.scvi.ventas.model.VentaDetalle;
+import mx.unam.fca.scvi.ventas.model.EstadoVenta;
+import mx.unam.fca.scvi.ventas.model.FormaPago;
+import mx.unam.fca.scvi.ventas.model.Pago;
+import mx.unam.fca.scvi.ventas.model.Venta;
+import mx.unam.fca.scvi.ventas.model.VentaDetalle;
 import org.junit.jupiter.api.Test;
 
 class TicketServiceTest {

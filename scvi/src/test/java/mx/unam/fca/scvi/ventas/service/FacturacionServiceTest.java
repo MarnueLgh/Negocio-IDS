@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -9,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import mx.edu.scvi.ventas.PruebaDatos;
-import mx.edu.scvi.ventas.PruebaIntegracion;
-import mx.edu.scvi.ventas.common.ReglaNegocioException;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.EstadoFactura;
-import mx.edu.scvi.ventas.model.EstadoPedido;
-import mx.edu.scvi.ventas.model.Factura;
-import mx.edu.scvi.ventas.model.FormaPago;
-import mx.edu.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.PruebaDatos;
+import mx.unam.fca.scvi.ventas.PruebaIntegracion;
+import mx.unam.fca.scvi.ventas.common.ReglaNegocioException;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.EstadoFactura;
+import mx.unam.fca.scvi.ventas.model.EstadoPedido;
+import mx.unam.fca.scvi.ventas.model.Factura;
+import mx.unam.fca.scvi.ventas.model.FormaPago;
+import mx.unam.fca.scvi.ventas.model.Zona;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,10 +81,10 @@ class FacturacionServiceTest {
         FacturacionService.ResultadoFactura detalle = facturacion.obtener(factura.getFacturaId());
         assertNotNull(detalle.cuenta());
         assertDinero("232.00", detalle.cuenta().getImportePendiente());
-        BigDecimal comision = jdbc.queryForObject("SELECT importe_comision FROM comision WHERE factura_id = ?",
+        BigDecimal comision = jdbc.queryForObject("SELECT importeComision FROM Comision WHERE facturaId = ?",
                 BigDecimal.class, factura.getFacturaId());
         assertDinero("6.00", comision);
-        assertEquals("FACTURADO", jdbc.queryForObject("SELECT estado FROM pedido WHERE pedido_id = ?",
+        assertEquals("FACTURADO", jdbc.queryForObject("SELECT estado FROM Pedido WHERE pedidoId = ?",
                 String.class, pedidoId));
     }
 
@@ -95,7 +95,7 @@ class FacturacionServiceTest {
 
         Factura factura = facturacion.facturarPedido(pedidoId, null);
 
-        assertEquals(0, contar("SELECT COUNT(*) FROM cuenta_por_cobrar WHERE factura_id = ?", factura.getFacturaId()));
+        assertEquals(0, contar("SELECT COUNT(*) FROM CuentaPorCobrar WHERE facturaId = ?", factura.getFacturaId()));
     }
 
     @Test
@@ -128,10 +128,10 @@ class FacturacionServiceTest {
 
         assertEquals(EstadoFactura.CANCELADA, cancelada.getEstado());
         assertEquals(EstadoPedido.ENTREGADO.name(), jdbc.queryForObject(
-                "SELECT estado FROM pedido WHERE pedido_id = ?", String.class, pedidoId));
-        assertEquals("CANCELADA", jdbc.queryForObject("SELECT estado FROM cuenta_por_cobrar WHERE factura_id = ?",
+                "SELECT estado FROM Pedido WHERE pedidoId = ?", String.class, pedidoId));
+        assertEquals("CANCELADA", jdbc.queryForObject("SELECT estado FROM CuentaPorCobrar WHERE facturaId = ?",
                 String.class, factura.getFacturaId()));
-        assertEquals("CANCELADA", jdbc.queryForObject("SELECT estado FROM comision WHERE factura_id = ?",
+        assertEquals("CANCELADA", jdbc.queryForObject("SELECT estado FROM Comision WHERE facturaId = ?",
                 String.class, factura.getFacturaId()));
     }
 
@@ -169,7 +169,7 @@ class FacturacionServiceTest {
 
         Factura factura = facturacion.facturaDeVenta(r.venta().getVentaId()).orElseThrow();
         assertDinero("116.00", factura.getTotal());
-        assertEquals(0, contar("SELECT COUNT(*) FROM cuenta_por_cobrar WHERE factura_id = ?", factura.getFacturaId()));
+        assertEquals(0, contar("SELECT COUNT(*) FROM CuentaPorCobrar WHERE facturaId = ?", factura.getFacturaId()));
     }
 
     @Test

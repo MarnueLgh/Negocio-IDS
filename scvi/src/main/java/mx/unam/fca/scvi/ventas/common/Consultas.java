@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.common;
+package mx.unam.fca.scvi.ventas.common;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /** Consultas SQL nativas para los reportes (agrupaciones con varias tablas) devueltas como filas columna -> valor. */
 public final class Consultas {
@@ -16,18 +18,32 @@ public final class Consultas {
     private Consultas() {
     }
 
-    /** Ejecuta un SELECT nativo con parámetros '?' en orden y devuelve cada fila como mapa alias -> valor. */
+    /** Alias de columna escrito en la consulta: AS `alias`. */
+    private static final Pattern ALIAS = Pattern.compile("AS `(\\w+)`");
+
+    /**
+     * Ejecuta un SELECT nativo con parámetros '?' en orden y devuelve cada fila como mapa alias -> valor.
+     * Los alias se toman del texto de la consulta (AS `alias`, en el orden del SELECT) y no del controlador JDBC,
+     * porque cada base de datos los devuelve con distintas mayúsculas (H2 en pruebas, MySQL en producción).
+     */
     @SuppressWarnings("unchecked")
     public static List<Map<String, Object>> filas(EntityManager em, String sql, Object... parametros) {
         Query consulta = em.createNativeQuery(numerar(sql), Tuple.class);
         for (int i = 0; i < parametros.length; i++) {
             consulta.setParameter(i + 1, parametros[i]);
         }
+        List<String> alias = new ArrayList<>();
+        Matcher coincidencia = ALIAS.matcher(sql);
+        while (coincidencia.find()) {
+            alias.add(coincidencia.group(1));
+        }
         List<Map<String, Object>> filas = new ArrayList<>();
         for (Tuple tupla : (List<Tuple>) consulta.getResultList()) {
+            List<TupleElement<?>> elementos = tupla.getElements();
             Map<String, Object> fila = new LinkedHashMap<>();
-            for (TupleElement<?> elemento : tupla.getElements()) {
-                fila.put(elemento.getAlias(), tupla.get(elemento.getAlias()));
+            for (int i = 0; i < elementos.size(); i++) {
+                String nombre = alias.size() == elementos.size() ? alias.get(i) : elementos.get(i).getAlias();
+                fila.put(nombre, tupla.get(i));
             }
             filas.add(fila);
         }

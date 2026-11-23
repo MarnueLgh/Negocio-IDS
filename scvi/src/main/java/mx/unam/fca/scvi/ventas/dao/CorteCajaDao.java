@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.dao;
+package mx.unam.fca.scvi.ventas.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import mx.edu.scvi.ventas.common.Consultas;
-import mx.edu.scvi.ventas.model.CorteCaja;
-import mx.edu.scvi.ventas.model.EstadoCorte;
+import mx.unam.fca.scvi.ventas.common.Consultas;
+import mx.unam.fca.scvi.ventas.model.CorteCaja;
+import mx.unam.fca.scvi.ventas.model.EstadoCorte;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -67,9 +67,9 @@ public class CorteCajaDao {
 
     public ResumenCorte resumenVentas(long corteId) {
         Object[] fila = (Object[]) em.createNativeQuery("SELECT COUNT(*), COALESCE(SUM(v.total), 0), "
-                        + "COALESCE(SUM(CASE WHEN p.forma_pago = 'EFECTIVO' THEN p.importe ELSE 0 END), 0) "
-                        + "FROM venta v LEFT JOIN pago p ON p.venta_id = v.venta_id "
-                        + "WHERE v.corte_caja_id = ?1 AND v.estado = 'COMPLETADA'")
+                        + "COALESCE(SUM(CASE WHEN p.formaPago = 'EFECTIVO' THEN p.importe ELSE 0 END), 0) "
+                        + "FROM Venta v LEFT JOIN Pago p ON p.ventaId = v.ventaId "
+                        + "WHERE v.corteCajaId = ?1 AND v.estado = 'COMPLETADA'")
                 .setParameter(1, corteId)
                 .getSingleResult();
         return new ResumenCorte(((Number) fila[0]).intValue(), Consultas.decimal(fila[1]), Consultas.decimal(fila[2]));

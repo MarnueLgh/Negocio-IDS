@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.model;
+package mx.unam.fca.scvi.ventas.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

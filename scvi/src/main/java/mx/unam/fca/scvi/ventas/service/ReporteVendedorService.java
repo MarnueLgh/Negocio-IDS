@@ -1,13 +1,13 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
-import mx.edu.scvi.ventas.common.Reglas;
-import mx.edu.scvi.ventas.dao.ClienteDao;
-import mx.edu.scvi.ventas.dao.ReporteVendedorDao;
-import mx.edu.scvi.ventas.dao.VendedorDao;
-import mx.edu.scvi.ventas.dao.ZonaDao;
+import mx.unam.fca.scvi.ventas.common.Reglas;
+import mx.unam.fca.scvi.ventas.dao.ClienteDao;
+import mx.unam.fca.scvi.ventas.dao.ReporteVendedorDao;
+import mx.unam.fca.scvi.ventas.dao.VendedorDao;
+import mx.unam.fca.scvi.ventas.dao.ZonaDao;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

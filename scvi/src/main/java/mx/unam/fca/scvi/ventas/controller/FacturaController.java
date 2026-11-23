@@ -1,9 +1,9 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
 import java.time.LocalDate;
 import java.util.List;
-import mx.edu.scvi.ventas.model.Factura;
-import mx.edu.scvi.ventas.service.FacturacionService;
+import mx.unam.fca.scvi.ventas.model.Factura;
+import mx.unam.fca.scvi.ventas.service.FacturacionService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;

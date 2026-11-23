@@ -1,10 +1,10 @@
-package mx.edu.scvi.ventas.integracion;
+package mx.unam.fca.scvi.ventas.integracion;
 
 import java.util.Optional;
 
 /**
  * Contrato síncrono con el subsistema de Inventario (la consistencia es inmediata: no se vende lo que no existe).
- * Hoy lo implementa InventarioLocalGateway sobre una tabla demo; al integrar se reemplaza solo la implementación.
+ * Lo implementa InventarioLocalGateway sobre la tabla Articulo de Inventario.
  */
 public interface InventarioGateway {
 

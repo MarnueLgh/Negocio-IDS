@@ -1,7 +1,7 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
-import mx.edu.scvi.ventas.evento.VentaDirectaCancelada;
-import mx.edu.scvi.ventas.evento.VentaDirectaRegistrada;
+import mx.unam.fca.scvi.ventas.evento.VentaDirectaCancelada;
+import mx.unam.fca.scvi.ventas.evento.VentaDirectaRegistrada;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 

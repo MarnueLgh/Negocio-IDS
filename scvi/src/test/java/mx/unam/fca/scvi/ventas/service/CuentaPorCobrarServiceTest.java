@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -9,16 +9,16 @@ import jakarta.persistence.PersistenceContext;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import mx.edu.scvi.ventas.PruebaDatos;
-import mx.edu.scvi.ventas.PruebaIntegracion;
-import mx.edu.scvi.ventas.common.NoEncontradoException;
-import mx.edu.scvi.ventas.common.ReglaNegocioException;
-import mx.edu.scvi.ventas.model.Cliente;
-import mx.edu.scvi.ventas.model.CuentaPorCobrar;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.EstadoCuenta;
-import mx.edu.scvi.ventas.model.FormaPago;
-import mx.edu.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.PruebaDatos;
+import mx.unam.fca.scvi.ventas.PruebaIntegracion;
+import mx.unam.fca.scvi.ventas.common.NoEncontradoException;
+import mx.unam.fca.scvi.ventas.common.ReglaNegocioException;
+import mx.unam.fca.scvi.ventas.model.Cliente;
+import mx.unam.fca.scvi.ventas.model.CuentaPorCobrar;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.EstadoCuenta;
+import mx.unam.fca.scvi.ventas.model.FormaPago;
+import mx.unam.fca.scvi.ventas.model.Zona;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,7 +98,7 @@ class CuentaPorCobrarServiceTest {
             // No hay ninguna cuenta vencida: la consulta avisa en lugar de devolver una lista vacía.
         }
 
-        jdbc.update("UPDATE cuenta_por_cobrar SET fecha_limite = ? WHERE cuenta_id = ?",
+        jdbc.update("UPDATE CuentaPorCobrar SET fechaLimite = ? WHERE cuentaId = ?",
                 LocalDate.now().minusDays(3), cuentaId);
         em.clear(); // la fecha cambió por SQL directo: se descarta lo que JPA tenía en memoria
 

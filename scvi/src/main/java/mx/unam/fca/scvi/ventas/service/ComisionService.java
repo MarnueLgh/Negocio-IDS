@@ -1,16 +1,16 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
-import mx.edu.scvi.ventas.common.Dinero;
-import mx.edu.scvi.ventas.common.NoEncontradoException;
-import mx.edu.scvi.ventas.common.Reglas;
-import mx.edu.scvi.ventas.dao.ComisionDao;
-import mx.edu.scvi.ventas.dao.VendedorCajaDao;
-import mx.edu.scvi.ventas.dao.VendedorDao;
-import mx.edu.scvi.ventas.model.Comision;
-import mx.edu.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.common.Dinero;
+import mx.unam.fca.scvi.ventas.common.NoEncontradoException;
+import mx.unam.fca.scvi.ventas.common.Reglas;
+import mx.unam.fca.scvi.ventas.dao.ComisionDao;
+import mx.unam.fca.scvi.ventas.dao.VendedorCajaDao;
+import mx.unam.fca.scvi.ventas.dao.VendedorDao;
+import mx.unam.fca.scvi.ventas.model.Comision;
+import mx.unam.fca.scvi.ventas.model.Empleado;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

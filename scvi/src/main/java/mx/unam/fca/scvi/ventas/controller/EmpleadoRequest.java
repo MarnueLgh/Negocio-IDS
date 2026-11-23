@@ -1,8 +1,8 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
 import java.math.BigDecimal;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.TipoEmpleado;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.TipoEmpleado;
 
 /** Cuerpo JSON para registrar/modificar vendedores y cajeros. */
 public record EmpleadoRequest(String nombre, String telefono, String domicilio, BigDecimal porcentajeComision,

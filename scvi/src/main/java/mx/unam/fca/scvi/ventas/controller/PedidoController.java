@@ -1,7 +1,7 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
-import mx.edu.scvi.ventas.model.Pedido;
-import mx.edu.scvi.ventas.service.PedidoService;
+import mx.unam.fca.scvi.ventas.model.Pedido;
+import mx.unam.fca.scvi.ventas.service.PedidoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

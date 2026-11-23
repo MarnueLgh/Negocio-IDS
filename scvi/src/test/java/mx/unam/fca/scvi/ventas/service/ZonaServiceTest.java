@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
-import mx.edu.scvi.ventas.PruebaIntegracion;
-import mx.edu.scvi.ventas.common.ReglaNegocioException;
-import mx.edu.scvi.ventas.model.Zona;
+import mx.unam.fca.scvi.ventas.PruebaIntegracion;
+import mx.unam.fca.scvi.ventas.common.ReglaNegocioException;
+import mx.unam.fca.scvi.ventas.model.Zona;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -78,14 +78,14 @@ class ZonaServiceTest {
     }
 
     private long insertarCliente(String rfc, long zonaId) {
-        jdbc.update("INSERT INTO cliente (nombre, rfc, domicilio, telefono, limite_credito, dias_credito, activo, zona_id) "
+        jdbc.update("INSERT INTO Cliente (nombre, rfc, domicilio, telefono, limiteCredito, diasCredito, activo, zonaId) "
                 + "VALUES (?, ?, 'Calle X', '5500000000', 0, 0, TRUE, ?)", "Cliente " + rfc, rfc, zonaId);
-        Long id = jdbc.queryForObject("SELECT cliente_id FROM cliente WHERE rfc = ?", Long.class, rfc);
+        Long id = jdbc.queryForObject("SELECT clienteId FROM Cliente WHERE rfc = ?", Long.class, rfc);
         return id == null ? -1 : id;
     }
 
     private int clientesEn(long zonaId) {
-        Integer total = jdbc.queryForObject("SELECT COUNT(*) FROM cliente WHERE zona_id = ?", Integer.class, zonaId);
+        Integer total = jdbc.queryForObject("SELECT COUNT(*) FROM Cliente WHERE zonaId = ?", Integer.class, zonaId);
         return total == null ? 0 : total;
     }
 }

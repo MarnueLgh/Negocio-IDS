@@ -1,9 +1,9 @@
-package mx.edu.scvi.ventas.controller;
+package mx.unam.fca.scvi.ventas.controller;
 
 import java.math.BigDecimal;
-import mx.edu.scvi.ventas.model.CuentaPorCobrar;
-import mx.edu.scvi.ventas.model.FormaPago;
-import mx.edu.scvi.ventas.service.CuentaPorCobrarService;
+import mx.unam.fca.scvi.ventas.model.CuentaPorCobrar;
+import mx.unam.fca.scvi.ventas.model.FormaPago;
+import mx.unam.fca.scvi.ventas.service.CuentaPorCobrarService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

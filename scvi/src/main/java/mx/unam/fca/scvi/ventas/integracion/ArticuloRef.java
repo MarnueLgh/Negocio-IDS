@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.integracion;
+package mx.unam.fca.scvi.ventas.integracion;
 
 import java.math.BigDecimal;
 

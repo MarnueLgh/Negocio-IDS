@@ -1,4 +1,4 @@
-package mx.edu.scvi.ventas.service;
+package mx.unam.fca.scvi.ventas.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -6,14 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.math.BigDecimal;
 import java.util.List;
-import mx.edu.scvi.ventas.PruebaDatos;
-import mx.edu.scvi.ventas.PruebaIntegracion;
-import mx.edu.scvi.ventas.common.NoEncontradoException;
-import mx.edu.scvi.ventas.common.ReglaNegocioException;
-import mx.edu.scvi.ventas.integracion.InventarioGateway;
-import mx.edu.scvi.ventas.model.EstadoVenta;
-import mx.edu.scvi.ventas.model.Empleado;
-import mx.edu.scvi.ventas.model.FormaPago;
+import mx.unam.fca.scvi.ventas.PruebaDatos;
+import mx.unam.fca.scvi.ventas.PruebaIntegracion;
+import mx.unam.fca.scvi.ventas.common.NoEncontradoException;
+import mx.unam.fca.scvi.ventas.common.ReglaNegocioException;
+import mx.unam.fca.scvi.ventas.integracion.InventarioGateway;
+import mx.unam.fca.scvi.ventas.model.EstadoVenta;
+import mx.unam.fca.scvi.ventas.model.Empleado;
+import mx.unam.fca.scvi.ventas.model.FormaPago;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,7 +102,7 @@ class VentaDirectaServiceTest {
     @Test
     void generaComisionDelCajeroSobreElSubtotal() {
         VentaDirectaService.ResultadoVenta r = ventaService.registrar(solicitud("ART-001", 2, FormaPago.TARJETA, null));
-        BigDecimal comision = jdbc.queryForObject("SELECT importe_comision FROM comision WHERE venta_id = ?",
+        BigDecimal comision = jdbc.queryForObject("SELECT importeComision FROM Comision WHERE ventaId = ?",
                 BigDecimal.class, r.venta().getVentaId());
         assertDinero("4.00", comision);
     }
@@ -115,7 +115,7 @@ class VentaDirectaServiceTest {
         assertEquals(EstadoVenta.CANCELADA, ventaService.cancelar(r.venta().getVentaId()).getEstado());
 
         assertEquals(antes, inventario.buscarPorCodigo("ART-001").orElseThrow().existencias());
-        String estado = jdbc.queryForObject("SELECT estado FROM comision WHERE venta_id = ?", String.class,
+        String estado = jdbc.queryForObject("SELECT estado FROM Comision WHERE ventaId = ?", String.class,
                 r.venta().getVentaId());
         assertEquals("CANCELADA", estado);
         assertThrows(ReglaNegocioException.class, () -> ventaService.cancelar(r.venta().getVentaId()));
