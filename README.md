@@ -103,6 +103,9 @@ El sistema utiliza MySQL para almacenar la información compartida entre los sub
   * `01_crear_articulo.sql`: tabla `Articulo` (INV-04; columna `activo` agregada en INV-07).
   * `02_crear_bodega.sql`: tabla `Bodega` con dos bodegas iniciales (INV-07).
   * `03_crear_recepcion.sql`: tabla `Recepcion` (INV-07).
+  * `04_crear_ventas_zonas_empleados_clientes.sql`: tablas `Zona`, `Empleado`, `Cliente` y `Comision` (Ventas).
+  * `05_crear_ventas_directas_caja.sql`: tablas `CorteCaja`, `Venta`, `VentaDetalle`, `Pago` y `Ticket` (Ventas).
+  * `06_crear_ventas_pedidos_facturacion.sql`: tablas `Pedido`, `DetallePedido`, `Factura`, `FacturaDetalle`, `CuentaPorCobrar` y `PagoCuentaPorCobrar` (Ventas).
 * **Tablas principales:**
   * `Articulo`: catálogo de artículos. Su llave `articuloId` es el "ID artículo" que usan las demás historias.
   * `Bodega`: bodegas donde se recibe la mercancía (estructura mínima: `bodegaId`, `nombre`).

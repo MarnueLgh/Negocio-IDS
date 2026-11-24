@@ -1,0 +1,64 @@
+package mx.unam.fca.scvi.ventas.controller;
+
+import java.time.LocalDate;
+import java.util.List;
+import mx.unam.fca.scvi.ventas.model.Venta;
+import mx.unam.fca.scvi.ventas.service.VentaDirectaService;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * API REST para registrar, consultar, cancelar y listar ventas directas (/api/ventas-directas).
+ * Delega en VentaDirectaService.
+ *
+ * Subsistema: Ventas.
+ *
+ * @author Álvarez Aguilar Saúl Antonio Equipo 2
+ * @author Pérez Flores Roberto Carlos Equipo 2
+ * @author Pérez Muñoz Diego Equipo 2
+ *
+ * Fecha creación: 15-11-2026
+ *
+ * Fecha modificación: 23-11-2026
+ */
+@RestController
+@RequestMapping("/api/ventas-directas")
+public class VentaDirectaController {
+
+    private final VentaDirectaService ventaService;
+
+    public VentaDirectaController(VentaDirectaService ventaService) {
+        this.ventaService = ventaService;
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public VentaDirectaService.ResultadoVenta registrar(@RequestBody VentaDirectaService.Solicitud solicitud) {
+        return ventaService.registrar(solicitud);
+    }
+
+    @GetMapping("/{id}")
+    public VentaDirectaService.ResultadoVenta obtener(@PathVariable("id") long id) {
+        return ventaService.obtener(id);
+    }
+
+    @PostMapping("/{id}/cancelar")
+    public Venta cancelar(@PathVariable("id") long id) {
+        return ventaService.cancelar(id);
+    }
+
+    @GetMapping
+    public List<Venta> listar(
+            @RequestParam("desde") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate desde,
+            @RequestParam("hasta") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate hasta) {
+        return ventaService.listar(desde, hasta);
+    }
+}
